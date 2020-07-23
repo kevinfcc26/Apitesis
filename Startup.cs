@@ -56,6 +56,13 @@ namespace ApiTesis
                 conf.SwaggerEndpoint("/swagger/V1/swagger.json", "ApiTesis");
             });
 
+            app.UseCors(option =>
+            {
+                option.AllowAnyHeader();
+                option.AllowAnyMethod();
+                option.AllowAnyOrigin();
+            });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
